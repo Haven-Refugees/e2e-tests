@@ -3,7 +3,6 @@
 cypress/videos/
 cypress/screenshots/
 cypress/reports/
-cypress/config/cypress.local.json
 docker-compose.override.yml
 node_modules/
 .env
