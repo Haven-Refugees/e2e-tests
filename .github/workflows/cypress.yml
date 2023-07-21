@@ -26,6 +26,10 @@ jobs:
           record: true
           parallel: true # Runs test in parallel using settings above
         env:
+          SUPPORTER_LOGIN: ${{ secrets.SUPPORTER_LOGIN }}
+          SUPPORTER_PASSWORD: ${{ secrets.SUPPORTER_PASSWORD }}
+          REFUGEE_LOGIN: ${{ secrets.REFUGEE_LOGIN }}
+          REFUGEE_PASSWORD: ${{ secrets.REFUGEE_PASSWORD }}
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
           # in GitHub repo → Settings → Secrets → Actions
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
