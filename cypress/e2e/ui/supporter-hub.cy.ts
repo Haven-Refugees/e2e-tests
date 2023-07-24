@@ -15,6 +15,8 @@ describe('As a supporter I want to', () => {
     describe('dashboard', () => {
         describe('navigation', () => {
             it('should work', () => {
+                supporterHub.open();
+                supporterHub.performLogin();
                 supporterHub.goToDashboard();
             });
         });
