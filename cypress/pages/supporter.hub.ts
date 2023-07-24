@@ -22,8 +22,7 @@ class SupporterHub extends BasePage {
   }
 
   public applySideMenuTests() {
-    this.components.sideMenu.testSideMenuAvailability();
-    this.screenshot(this.components.sideMenu.elements.sideMenuContainer, 'Supporter Menu');
+    this.components.sideMenu.applyCommonSideMenuTests('Supporter Menu');
   }
 
   public goToDashboard() {

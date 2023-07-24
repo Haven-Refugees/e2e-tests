@@ -1,9 +1,10 @@
 import BaseComponent from "../components/base.component";
+import SidemenuComponent from "./Sidemenu.component";
 
 export enum AccountType {
-  refugee,
-  supporter,
-  admin
+  refugee = 'refugee',
+  supporter = 'supporter',
+  admin = 'admin'
 }
 
 export type AccountCredential = {
@@ -20,6 +21,9 @@ class LoginModule extends BaseComponent {
       password: '.baTaJax > .bubble-element.Input[type=password]',
       rememberMe: '.baTaJbaP > .Checkbox [type=checkbox]',
       submit: 'button.baTaJbaE',
+    };
+    this.components = {
+      sideMenu: new SidemenuComponent(),
     };
   }
 
@@ -52,6 +56,13 @@ class LoginModule extends BaseComponent {
         throw new Error('Please specify AccountType');
       }
     }
+
+    cy.url().should('include', '/dashboard');
+    this.verifyLogin(accountType);
+  }
+
+  public verifyLogin(accountType: AccountType) {
+    this.components.sideMenu.applyCommonSideMenuTests(`${accountType} Menu`);
   }
 
   public doLogin(credentials: AccountCredential){
@@ -71,9 +82,6 @@ class LoginModule extends BaseComponent {
     }
 
     cy.get(this.elements.submit).click();
-
-
-    cy.url().should('include', '/dashboard');
   }
 
 }

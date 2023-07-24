@@ -19,8 +19,7 @@ class RefugeeHub extends BasePage {
   }
 
   public applySideMenuTests() {
-    this.components.sideMenu.testSideMenuAvailability()
-    this.screenshot(this.components.sideMenu.elements.sideMenuContainer, 'Refugee Menu');
+    this.components.sideMenu.applyCommonSideMenuTests('Refugee Menu');
   }
 }
 

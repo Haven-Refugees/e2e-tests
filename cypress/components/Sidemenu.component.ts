@@ -12,6 +12,12 @@ class SidemenuComponent extends BaseComponent {
     cy.isVisible(this.elements.sideMenuContainer);
   }
 
+  public applyCommonSideMenuTests(label: string) {
+    this.testSideMenuAvailability();
+    this.screenshot(this.elements.sideMenuContainer, label);
+  }
+
+
 }
 
 export default SidemenuComponent;
