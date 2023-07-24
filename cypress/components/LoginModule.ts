@@ -2,7 +2,8 @@ import BaseComponent from "../components/base.component";
 
 export enum AccountType {
   refugee,
-  supporter
+  supporter,
+  admin
 }
 
 export type AccountCredential = {
@@ -23,7 +24,7 @@ class LoginModule extends BaseComponent {
   }
 
   public login(accountType: AccountType, rememberMe: boolean = true){
-    const { supporter, refugee } = Cypress.env('accounts');
+    const { supporter, refugee, admin } = Cypress.env('accounts');
 
     switch (accountType) {
       case AccountType.refugee:
@@ -37,6 +38,13 @@ class LoginModule extends BaseComponent {
         this.doLogin({
           login: supporter.login,
           password: supporter.password,
+          rememberMe: rememberMe
+        });
+        break;
+      case AccountType.admin:
+        this.doLogin({
+          login: admin.login,
+          password: admin.password,
           rememberMe: rememberMe
         });
         break;

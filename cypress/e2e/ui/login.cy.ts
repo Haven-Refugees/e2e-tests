@@ -40,4 +40,15 @@ describe('As a user I want to perform login', () => {
     });
   });
 
+  describe('admin account', () => {
+    it('should login with remember me true', () => {
+      loginPage.open();
+      loginPage.login(AccountType.admin, true);
+    });
+    it('should login with remember me false', () => {
+      loginPage.open();
+      loginPage.login(AccountType.admin, false);
+    });
+  });
+
 });
