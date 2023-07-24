@@ -1,6 +1,7 @@
 import BasePage from './base.page';
 import SidemenuComponent from "../components/Sidemenu.component";
 import LoginModule, {AccountType} from "../components/LoginModule";
+import DashboardComponent, {OfferCreate} from "../components/DashboardComponent";
 
 class SupporterHub extends BasePage {
   constructor() {
@@ -11,7 +12,8 @@ class SupporterHub extends BasePage {
     };
     this.components = {
       sideMenu: new SidemenuComponent(),
-      loginModule: new LoginModule()
+      loginModule: new LoginModule(),
+      dashboard: new DashboardComponent()
     };
   }
 
@@ -22,6 +24,16 @@ class SupporterHub extends BasePage {
   public applySideMenuTests() {
     this.components.sideMenu.testSideMenuAvailability();
     this.screenshot(this.components.sideMenu.elements.sideMenuContainer, 'Supporter Menu');
+  }
+
+  public goToDashboard() {
+    this.components.dashboard.goToDashboard();
+    //TODO: add screen shot testing
+  }
+
+  public addOffer(offer: OfferCreate) {
+    this.components.dashboard.goToDashboard();
+    this.components.dashboard.addNewOffer(offer);
   }
 }
 
