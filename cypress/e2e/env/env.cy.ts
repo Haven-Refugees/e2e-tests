@@ -23,5 +23,18 @@ describe('As a developer I want to ensure that Cypress environment has correct s
     it('has password to use', () => {
       expect(refugee.password).to.be.a('string');
     });
-  })
+  });
+
+  describe('admin account', () => {
+    const { admin } = Cypress.env('accounts');
+
+    it('has login to use', () => {
+      expect(admin.login).to.be.a('string');
+    });
+
+    it('has password to use', () => {
+      expect(admin.password).to.be.a('string');
+    });
+  });
+
 });

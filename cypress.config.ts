@@ -1,5 +1,10 @@
 import { defineConfig } from 'cypress'
 
+
+const priorityTests = [
+  "cypress/e2e/env/*.ts",
+]
+
 export default defineConfig({
   projectId: 'iz2qa8',
   defaultCommandTimeout: 10000,
@@ -15,6 +20,9 @@ export default defineConfig({
   screenshotOnRunFailure: true,
   restartBrowserBetweenSpecFiles: true,
   reporter: 'mochawesome',
+  e2e: {
+    specPattern: priorityTests,
+  },
   reporterOptions: {
     reportDir: 'cypress/reports/integration',
     overwrite: false,

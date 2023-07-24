@@ -8,6 +8,10 @@
     "refugee": {
       "login": null,
       "password": null
+    },
+    "admin": {
+      "login": null,
+      "password": null
     }
   }
 }

@@ -20,6 +20,8 @@ const envMapKeys = {
     'SUPPORTER_PASSWORD',
     'REFUGEE_LOGIN',
     'REFUGEE_PASSWORD',
+    'ADMIN_LOGIN',
+    'ADMIN_PASSWORD',
   ]
 }
 

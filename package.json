@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/Haven-Refugees/e2e-tests#readme",
   "scripts": {
+    "start": "npm run cy:start",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:chrome": "cypress run --headless --browser chrome",
