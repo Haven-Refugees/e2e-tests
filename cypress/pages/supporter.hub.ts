@@ -27,12 +27,22 @@ class SupporterHub extends BasePage {
 
   public goToDashboard() {
     this.components.dashboard.goToDashboard();
-    //TODO: add screen shot testing
   }
 
-  public addOffer(offer: OfferCreate) {
-    this.components.dashboard.goToDashboard();
+  public addNewOffer(offer: OfferCreate) {
     this.components.dashboard.addNewOffer(offer);
+  }
+
+  public verifyOffer(offer: OfferCreate) {
+    this.components.dashboard.verifyOffer(offer);
+  }
+
+  public editOffer(offer: OfferCreate) {
+    this.components.dashboard.editOffer(offer);
+  }
+
+  public withdrawEditedOffer(offer: OfferCreate) {
+    this.components.dashboard.withdrawEditedOffer(offer);
   }
 }
 

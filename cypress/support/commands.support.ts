@@ -4,8 +4,11 @@ import 'cypress-iframe';
 import 'cypress-plugin-tab';
 import 'cypress-wait-until';
 import { registerCommand } from 'cypress-wait-for-stable-dom';
-registerCommand();
+import { registerStorage } from './kvStorage';
 import { mailsac } from './emails/mailsac.support';
+
+registerCommand();
+registerStorage();
 
 declare global {
   namespace Cypress {
