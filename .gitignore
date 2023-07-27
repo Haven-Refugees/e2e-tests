@@ -1,0 +1,8 @@
+.idea
+.DS_Store
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+docker-compose.override.yml
+node_modules/
+.env

@@ -1,0 +1,17 @@
+{
+  "baseUrl": "https://app.findhaven.org/version-test",
+  "accounts": {
+    "supporter": {
+      "login": null,
+      "password": null
+    },
+    "refugee": {
+      "login": null,
+      "password": null
+    },
+    "admin": {
+      "login": null,
+      "password": null
+    }
+  }
+}
